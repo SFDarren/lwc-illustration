@@ -1,5 +1,9 @@
 # lwc-illustration
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Salesforce API](https://img.shields.io/badge/Salesforce%20API-v65.0-00A1E0?logo=salesforce&logoColor=white)](https://developer.salesforce.com/)
+[![Built with LWC](https://img.shields.io/badge/Built%20with-LWC-00A1E0?logo=salesforce&logoColor=white)](https://developer.salesforce.com/docs/component-library)
+
 A flexible, themeable Lightning Web Component for rendering [Salesforce Lightning Design System (SLDS) illustrations](https://www.lightningdesignsystem.com/components/illustration/) in your Salesforce org.
 
 ---
@@ -256,4 +260,4 @@ Clicking the action button fires a `ShowToastEvent` success notification to demo
 
 ## License
 
-MIT
+[MIT](LICENSE) © 2026 Darren Seet
