@@ -3,7 +3,7 @@ import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 const ILLUSTRATIONS = [
     { name: 'no-content',    label: 'No Content',    heading: 'No Results Found',      body: 'Try adjusting your search or filters to find what you\'re looking for.' },
-    { name: 'no-access',     label: 'No Access',     heading: 'Access Restricted',     body: 'You don\'t have permission to view this content. Contact your administrator.' },
+    { name: 'no-access',     label: 'No Access',     heading: 'Access Restricted',     body: 'You don\'t have permission to view this content.' },
     { name: 'no-connection', label: 'No Connection', heading: 'No Connection',         body: 'Check your network connection and try again.' },
     { name: 'error',         label: 'Error',         heading: 'Something Went Wrong',  body: 'An unexpected error occurred. Refresh the page or contact support.' },
     { name: 'desert',        label: 'Desert',        heading: 'Nothing Here Yet',      body: 'Get started by creating your first record.' },

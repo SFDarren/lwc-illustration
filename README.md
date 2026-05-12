@@ -16,6 +16,7 @@ A flexible, themeable Lightning Web Component for rendering [Salesforce Lightnin
 - **Actions slot** — pass any content (buttons, button groups, custom components) below the text
 - **Full SLDS theming** — SVGs are inline so all `slds-illustration__*` CSS classes apply correctly, including brand colour overrides
 - **Single deployable component** — uses LWC's `render()` multi-template pattern; no child components required
+- **App Builder ready** — exposed to Lightning App Builder with dropdown pickers for illustration and size; admins can configure and place it on any page without code
 - **Easy to extend** — adding a new illustration is just one new HTML file + one line in the JS map
 
 ---
@@ -69,6 +70,23 @@ sf project deploy start \
 ### Requirements
 
 - Salesforce CLI (`sf`)
+
+---
+
+## App Builder (No-Code Usage)
+
+`c-illustration` is exposed to Lightning App Builder and can be placed directly on any App Page, Record Page, or Home Page without writing markup.
+
+After deploying, drag **Illustration** from the component panel onto the page. The properties panel provides:
+
+| Property | Control | Options |
+|---|---|---|
+| Illustration | Dropdown | `no-content`, `no-access`, `no-connection`, `error`, `desert` |
+| Size | Dropdown | `small`, `large` |
+| Heading | Text input | Any string, or leave blank |
+| Body Text | Text input | Any string, or leave blank |
+
+> **Note:** The `actions` slot is not configurable in App Builder — it can only be passed from markup. Use `c-illustration` in a parent LWC if you need an action button.
 
 ---
 
