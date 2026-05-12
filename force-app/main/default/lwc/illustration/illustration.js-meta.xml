@@ -6,6 +6,7 @@
         <target>lightning__AppPage</target>
         <target>lightning__RecordPage</target>
         <target>lightning__HomePage</target>
+        <target>lightning__FlowScreen</target>
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage">
@@ -13,6 +14,12 @@
             <property name="size" type="String" label="Size" datasource="small,large" default="small" description="small renders at 300px max, large at 600px max"/>
             <property name="heading" type="String" label="Heading" description="Optional heading text"/>
             <property name="body" type="String" label="Body Text" description="Optional subtext below the heading"/>
+        </targetConfig>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="name" type="String" label="Illustration" datasource="no-content,no-access,no-connection,error,desert" default="no-content" description="The illustration to display" role="inputOnly"/>
+            <property name="size" type="String" label="Size" datasource="small,large" default="small" description="small renders at 300px max, large at 600px max" role="inputOnly"/>
+            <property name="heading" type="String" label="Heading" description="Optional heading text" role="inputOnly"/>
+            <property name="body" type="String" label="Body Text" description="Optional subtext below the heading" role="inputOnly"/>
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

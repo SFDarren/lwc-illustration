@@ -16,7 +16,7 @@ A flexible, themeable Lightning Web Component for rendering [Salesforce Lightnin
 - **Actions slot** — pass any content (buttons, button groups, custom components) below the text
 - **Full SLDS theming** — SVGs are inline so all `slds-illustration__*` CSS classes apply correctly, including brand colour overrides
 - **Single deployable component** — uses LWC's `render()` multi-template pattern; no child components required
-- **App Builder ready** — exposed to Lightning App Builder with dropdown pickers for illustration and size; admins can configure and place it on any page without code
+- **App Builder & Flow ready** — exposed to Lightning App Builder and Screen Flows with dropdown pickers for illustration and size; admins can configure and place it on any page or flow screen without code
 - **Easy to extend** — adding a new illustration is just one new HTML file + one line in the JS map
 
 ---
@@ -73,11 +73,11 @@ sf project deploy start \
 
 ---
 
-## App Builder (No-Code Usage)
+## App Builder & Screen Flows (No-Code Usage)
 
-`c-illustration` is exposed to Lightning App Builder and can be placed directly on any App Page, Record Page, or Home Page without writing markup.
+`c-illustration` is exposed to Lightning App Builder and Screen Flows. It can be placed on any App Page, Record Page, Home Page, or Flow Screen without writing markup.
 
-After deploying, drag **Illustration** from the component panel onto the page. The properties panel provides:
+The properties panel provides the same controls in both contexts:
 
 | Property | Control | Options |
 |---|---|---|
@@ -86,7 +86,9 @@ After deploying, drag **Illustration** from the component panel onto the page. T
 | Heading | Text input | Any string, or leave blank |
 | Body Text | Text input | Any string, or leave blank |
 
-> **Note:** The `actions` slot is not configurable in App Builder — it can only be passed from markup. Use `c-illustration` in a parent LWC if you need an action button.
+In Screen Flows, all properties are input-only — values can be passed in from flow variables or typed directly in Flow Builder, but the component exposes no output variables.
+
+> **Note:** The `actions` slot is not configurable in App Builder or Flow Builder — it can only be passed from markup. Use `c-illustration` in a parent LWC if you need an action button.
 
 ---
 
