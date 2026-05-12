@@ -77,7 +77,7 @@ sf project deploy start \
 
 `c-illustration` is exposed to Lightning App Builder and Screen Flows. It can be placed on any App Page, Record Page, Home Page, or Flow Screen without writing markup.
 
-The properties panel provides the same controls in both contexts:
+**Lightning App Builder** (App Page, Record Page, Home Page):
 
 | Property | Control | Options |
 |---|---|---|
@@ -86,7 +86,16 @@ The properties panel provides the same controls in both contexts:
 | Heading | Text input | Any string, or leave blank |
 | Body Text | Text input | Any string, or leave blank |
 
-In Screen Flows, all properties are input-only — values can be passed in from flow variables or typed directly in Flow Builder, but the component exposes no output variables.
+**Screen Flows:**
+
+| Property | Control | Notes |
+|---|---|---|
+| Illustration | Text input | Valid values: `no-content` · `no-access` · `no-connection` · `error` · `desert` |
+| Size | Text input | Valid values: `small` · `large` |
+| Heading | Text input | Any string, or leave blank |
+| Body Text | Text input | Any string, or leave blank |
+
+Flow Builder does not support dropdown pickers for LWC screen components without a Custom Property Editor. All properties are input-only — values can be typed directly or bound to a flow text variable; the component exposes no output variables.
 
 > **Note:** The `actions` slot is not configurable in App Builder or Flow Builder — it can only be passed from markup. Use `c-illustration` in a parent LWC if you need an action button.
 
