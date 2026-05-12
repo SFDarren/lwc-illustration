@@ -1,0 +1,82 @@
+<template>
+    <lightning-card title="Illustration Demo">
+        <div class="slds-p-around_medium">
+
+            <div class="slds-m-bottom_medium">
+                <p class="slds-text-title_caps slds-m-bottom_x-small">Illustration</p>
+                <lightning-button-group>
+                    <template for:each={illustrationOptions} for:item="opt">
+                        <lightning-button
+                            key={opt.name}
+                            label={opt.label}
+                            variant={opt.variant}
+                            data-name={opt.name}
+                            onclick={handleIllustrationChange}>
+                        </lightning-button>
+                    </template>
+                </lightning-button-group>
+            </div>
+
+            <div class="slds-m-bottom_medium">
+                <p class="slds-text-title_caps slds-m-bottom_x-small">Size</p>
+                <lightning-button-group>
+                    <template for:each={sizeOptions} for:item="opt">
+                        <lightning-button
+                            key={opt.size}
+                            label={opt.label}
+                            variant={opt.variant}
+                            data-size={opt.size}
+                            onclick={handleSizeChange}>
+                        </lightning-button>
+                    </template>
+                </lightning-button-group>
+            </div>
+
+            <div class="slds-m-bottom_medium">
+                <p class="slds-text-title_caps slds-m-bottom_x-small">Text &amp; Action</p>
+                <lightning-button-group>
+                    <template for:each={textOptions} for:item="opt">
+                        <lightning-button
+                            key={opt.key}
+                            label={opt.label}
+                            variant={opt.variant}
+                            data-key={opt.key}
+                            onclick={handleTextToggle}>
+                        </lightning-button>
+                    </template>
+                </lightning-button-group>
+            </div>
+
+            <template lwc:if={showAction}>
+                <div class="slds-m-bottom_medium">
+                    <lightning-input
+                        label="Action label"
+                        value={actionLabel}
+                        onchange={handleActionLabelChange}>
+                    </lightning-input>
+                </div>
+            </template>
+
+            <div class="slds-box slds-theme_shade slds-m-top_medium">
+                <c-illustration
+                    name={activeName}
+                    size={activeSize}
+                    heading={activeHeading}
+                    body={activeBody}>
+                    <template lwc:if={showAction}>
+                        <div slot="actions">
+                            <lightning-button
+                                label={actionLabel}
+                                variant="brand"
+                                onclick={handleActionClick}>
+                            </lightning-button>
+                        </div>
+                    </template>
+                </c-illustration>
+            </div>
+
+            <pre class="slds-m-top_small slds-p-around_small" style="background:#f3f3f3; border-radius:4px; font-family:monospace; font-size:0.8rem; white-space:pre-wrap; margin:0;">{usageSnippet}</pre>
+
+        </div>
+    </lightning-card>
+</template>

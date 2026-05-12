@@ -1,0 +1,33 @@
+<template>
+    <div class={containerClass}>
+        <svg class="slds-illustration__svg" viewBox="0 0 454 194" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <path vector-effect="non-scaling-stroke"
+                      class="slds-illustration__stroke-secondary"
+                      stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                      d="M200,98 L200,76 C200,58 254,58 254,76 L254,98"/>
+                <rect class="slds-illustration__fill-secondary" x="185" y="98" width="84" height="64" rx="8"/>
+                <rect class="slds-illustration__stroke-primary"
+                      stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                      x="185" y="98" width="84" height="64" rx="8"/>
+                <circle vector-effect="non-scaling-stroke" class="slds-illustration__fill-primary" cx="227" cy="124" r="9"/>
+                <rect class="slds-illustration__fill-primary" x="222" y="124" width="10" height="18" rx="3"/>
+                <path vector-effect="non-scaling-stroke"
+                      class="slds-illustration__stroke-secondary"
+                      stroke-width="3" stroke-linecap="round"
+                      d="M0,170 L454,170"/>
+            </g>
+        </svg>
+        <template lwc:if={hasText}>
+            <div class="slds-text-longform">
+                <template lwc:if={hasHeading}>
+                    <h3 class="slds-text-heading_medium">{heading}</h3>
+                </template>
+                <template lwc:if={hasBody}>
+                    <p class="slds-text-body_regular">{body}</p>
+                </template>
+            </div>
+        </template>
+        <slot name="actions"></slot>
+    </div>
+</template>

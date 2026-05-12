@@ -1,0 +1,15 @@
+# Salesforce
+.sfdx/
+.sf/
+
+# Node
+node_modules/
+npm-debug.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/settings.json
+*.swp

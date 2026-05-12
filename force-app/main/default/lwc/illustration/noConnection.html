@@ -1,0 +1,50 @@
+<template>
+    <div class={containerClass}>
+        <svg class="slds-illustration__svg" viewBox="0 0 454 194" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <path vector-effect="non-scaling-stroke"
+                      class="slds-illustration__fill-secondary"
+                      d="M189,96 C189,96 171,96 171,78 C171,63 183,58 198,61 C200,47 211,36 227,36 C243,36 255,47 257,61 C271,58 285,63 285,78 C285,96 267,96 267,96 Z"/>
+                <path vector-effect="non-scaling-stroke"
+                      class="slds-illustration__stroke-secondary"
+                      stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                      d="M189,96 C189,96 171,96 171,78 C171,63 183,58 198,61 C200,47 211,36 227,36 C243,36 255,47 257,61 C271,58 285,63 285,78 C285,96 267,96 267,96 Z"/>
+                <path vector-effect="non-scaling-stroke"
+                      class="slds-illustration__stroke-primary"
+                      stroke-width="3" stroke-linecap="round"
+                      d="M210,96 L210,116"/>
+                <path vector-effect="non-scaling-stroke"
+                      class="slds-illustration__stroke-primary"
+                      stroke-width="3" stroke-linecap="round"
+                      d="M227,96 L227,130"/>
+                <path vector-effect="non-scaling-stroke"
+                      class="slds-illustration__stroke-primary"
+                      stroke-width="3" stroke-linecap="round"
+                      d="M244,96 L244,116"/>
+                <path vector-effect="non-scaling-stroke"
+                      class="slds-illustration__stroke-primary"
+                      stroke-width="3" stroke-linecap="round"
+                      d="M205,116 L249,116"/>
+                <path vector-effect="non-scaling-stroke"
+                      class="slds-illustration__stroke-primary"
+                      stroke-width="3" stroke-linecap="round"
+                      d="M216,138 L238,160 M238,138 L216,160"/>
+                <path vector-effect="non-scaling-stroke"
+                      class="slds-illustration__stroke-secondary"
+                      stroke-width="3" stroke-linecap="round"
+                      d="M0,170 L454,170"/>
+            </g>
+        </svg>
+        <template lwc:if={hasText}>
+            <div class="slds-text-longform">
+                <template lwc:if={hasHeading}>
+                    <h3 class="slds-text-heading_medium">{heading}</h3>
+                </template>
+                <template lwc:if={hasBody}>
+                    <p class="slds-text-body_regular">{body}</p>
+                </template>
+            </div>
+        </template>
+        <slot name="actions"></slot>
+    </div>
+</template>

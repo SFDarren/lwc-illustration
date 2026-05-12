@@ -1,0 +1,35 @@
+<template>
+    <div class={containerClass}>
+        <svg class="slds-illustration__svg" viewBox="0 0 454 194" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <path vector-effect="non-scaling-stroke"
+                      class="slds-illustration__fill-secondary"
+                      d="M174,148 L227,52 L280,148 Z"/>
+                <path vector-effect="non-scaling-stroke"
+                      class="slds-illustration__stroke-primary"
+                      stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                      d="M174,148 L227,52 L280,148 Z"/>
+                <path vector-effect="non-scaling-stroke"
+                      class="slds-illustration__stroke-primary"
+                      stroke-width="4" stroke-linecap="round"
+                      d="M227,92 L227,124"/>
+                <circle vector-effect="non-scaling-stroke" class="slds-illustration__fill-primary" cx="227" cy="136" r="4"/>
+                <path vector-effect="non-scaling-stroke"
+                      class="slds-illustration__stroke-secondary"
+                      stroke-width="3" stroke-linecap="round"
+                      d="M0,170 L454,170"/>
+            </g>
+        </svg>
+        <template lwc:if={hasText}>
+            <div class="slds-text-longform">
+                <template lwc:if={hasHeading}>
+                    <h3 class="slds-text-heading_medium">{heading}</h3>
+                </template>
+                <template lwc:if={hasBody}>
+                    <p class="slds-text-body_regular">{body}</p>
+                </template>
+            </div>
+        </template>
+        <slot name="actions"></slot>
+    </div>
+</template>

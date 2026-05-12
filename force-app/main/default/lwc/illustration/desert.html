@@ -1,0 +1,42 @@
+<template>
+    <div class={containerClass}>
+        <svg class="slds-illustration__svg" viewBox="0 0 454 194" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <circle vector-effect="non-scaling-stroke" class="slds-illustration__fill-secondary" cx="340" cy="60" r="28"/>
+                <circle vector-effect="non-scaling-stroke"
+                        class="slds-illustration__stroke-secondary"
+                        stroke-width="3" cx="340" cy="60" r="28"/>
+                <rect class="slds-illustration__fill-secondary" x="219" y="80" width="16" height="72" rx="8"/>
+                <rect class="slds-illustration__stroke-primary"
+                      stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                      x="219" y="80" width="16" height="72" rx="8"/>
+                <path vector-effect="non-scaling-stroke"
+                      class="slds-illustration__stroke-primary"
+                      stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                      d="M219,108 L195,108 L195,92"/>
+                <path vector-effect="non-scaling-stroke"
+                      class="slds-illustration__stroke-primary"
+                      stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                      d="M235,118 L259,118 L259,100"/>
+                <path vector-effect="non-scaling-stroke"
+                      class="slds-illustration__fill-secondary"
+                      d="M0,170 Q113,140 227,160 Q340,180 454,155 L454,194 L0,194 Z"/>
+                <path vector-effect="non-scaling-stroke"
+                      class="slds-illustration__stroke-secondary"
+                      stroke-width="3" stroke-linecap="round"
+                      d="M0,170 Q113,140 227,160 Q340,180 454,155"/>
+            </g>
+        </svg>
+        <template lwc:if={hasText}>
+            <div class="slds-text-longform">
+                <template lwc:if={hasHeading}>
+                    <h3 class="slds-text-heading_medium">{heading}</h3>
+                </template>
+                <template lwc:if={hasBody}>
+                    <p class="slds-text-body_regular">{body}</p>
+                </template>
+            </div>
+        </template>
+        <slot name="actions"></slot>
+    </div>
+</template>
