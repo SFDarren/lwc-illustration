@@ -18,11 +18,11 @@ A flexible, themeable Lightning Web Component for rendering [Salesforce Lightnin
 
 ## Component Architecture
 
-Instead of `lwc:if/elseif` chains or separate child components per illustration, this component uses LWC's `render()` lifecycle hook to swap between multiple HTML template files within a single bundle.
+Instead of `lwc:if/elseif` chains or separate child components per illustration, this component uses LWC's `render()` method to swap between multiple HTML template files within a single bundle.
 
 ```
 force-app/main/default/lwc/illustration/
-├── illustration.js           ← render() hook + API props
+├── illustration.js           ← render() method + API props
 ├── illustration.js-meta.xml
 ├── illustration.html         ← no-content template (also the LWC-required default)
 ├── noAccess.html
@@ -33,8 +33,10 @@ force-app/main/default/lwc/illustration/
 
 Each template file is self-contained — it contains the SVG markup, the conditional text block, and the `actions` slot. The JS class provides all getters (`hasHeading`, `hasBody`, `hasText`, `containerClass`) that every template binds to, since `this` is shared across all templates.
 
+> `render()` is not a lifecycle hook — it is a rendering control method. LWC lifecycle hooks are `connectedCallback`, `disconnectedCallback`, `renderedCallback`, and `errorCallback`.
+
 **Why not `lwc:is` (dynamic child components)?**
-`lwc:is` works well but requires a separate 3-file LWC bundle per illustration (15+ files for 5 illustrations). The `render()` approach keeps everything in one deployable unit while achieving the same outcome.
+`lwc:is` works well but requires a separate 3-file LWC bundle per illustration (15 files for 5 illustrations). The `render()` approach keeps everything in one deployable unit while achieving the same outcome.
 
 **Why not SVG sprites via Static Resources?**
 SLDS illustration SVGs use class-based selectors (`slds-illustration__stroke-primary`, `slds-illustration__fill-secondary`, etc.) applied directly to `<path>` and `<g>` elements. These selectors cannot penetrate the shadow DOM boundary created by cross-document `<use href="sprite.svg#id">` references. SVGs must be inline for SLDS theming to work.
@@ -63,7 +65,6 @@ sf project deploy start \
 ### Requirements
 
 - Salesforce CLI (`sf`)
-- API version 65.0 or higher (for `lwc:if` directive)
 
 ---
 
@@ -146,7 +147,7 @@ sf project deploy start \
 
 | Slot      | Description |
 |-----------|-------------|
-| `actions` | Rendered below the text block. Accepts any markup — buttons, button groups, layouts, custom components. Omit entirely to show no actions. |
+| `actions` | Rendered below the SVG and text block. Accepts any markup — buttons, button groups, layouts, custom components. Omit entirely to show no actions. |
 
 ### Text rendering behaviour
 

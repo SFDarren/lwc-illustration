@@ -1,4 +1,4 @@
-import { LightningElement, track } from 'lwc';
+import { LightningElement } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 const ILLUSTRATIONS = [
@@ -12,12 +12,12 @@ const ILLUSTRATIONS = [
 const SIZES = ['small', 'large'];
 
 export default class IllustrationDemo extends LightningElement {
-    @track activeName = 'no-content';
-    @track activeSize = 'small';
-    @track showHeading = true;
-    @track showBody = true;
-    @track showAction = true;
-    @track actionLabel = 'Take Action';
+    activeName = 'no-content';
+    activeSize = 'small';
+    showHeading = true;
+    showBody = true;
+    showAction = true;
+    actionLabel = 'Take Action';
 
     get activeIllustration() {
         return ILLUSTRATIONS.find(i => i.name === this.activeName);
